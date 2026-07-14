@@ -1,0 +1,63 @@
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ffff;
+  border-radius: 50%;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.05s linear, background-color 0.3s ease, width 0.3s ease, height 0.3s ease;
+  transform: translate3d(-100px, -100px, 0);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-ring {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #ff00ff;
+  border-radius: 50%;
+  position: fixed;
+  top: -20px;
+  left: -20px;
+  pointer-events: none;
+  z-index: 9998;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+  transform: translate3d(-100px, -100px, 0);
+}
+
+/* Hover state */
+.custom-cursor-dot.hovered {
+  background-color: #ff00ff;
+  width: 12px;
+  height: 12px;
+  top: -6px;
+  left: -6px;
+}
+
+.custom-cursor-ring.hovered {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: -30px;
+  border-color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* Click state */
+.custom-cursor-dot.clicked {
+  transform: scale(0.6);
+}
+
+.custom-cursor-ring.clicked {
+  transform: scale(1.4);
+  border-color: #ffffff;
+}
+
+/* Hide default cursor on desktop devices with mouse input capability */
+@media (pointer: fine) {
+  html, body, a, button, select, input, textarea, .skill-card, .sc-root, .tilt-root, .expertise-pill, .timeline-item, .contact-link-card, .achievement-item {
+    cursor: none !important;
+  }
+}

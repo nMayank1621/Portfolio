@@ -1,0 +1,26 @@
+.sc-root {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --sx: 50%;
+  --sy: 50%;
+  --sc: rgba(255, 0, 255, 0.14);
+}
+
+.sc-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    280px circle at var(--sx) var(--sy),
+    var(--sc),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.sc-root:hover .sc-glow {
+  opacity: 1;
+}
