@@ -125,6 +125,12 @@ body {
   z-index: 2;
 }
 
+/* GSAP inserts a spacer div after the pinned #projects element.
+   Give it the same background so there's no color flash during scroll. */
+#projects+div {
+  background: #05050a !important;
+}
+
 /* ─────────────────────────────────────────────
    SECTION LABELS  (01 / About, etc.)
 ───────────────────────────────────────────── */
@@ -782,7 +788,20 @@ body {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #030308;
+  background: #05050a;
+}
+
+/* Gradient fade at the bottom to blend into next section */
+.projects-horizontal-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  background: linear-gradient(to bottom, transparent, #05050a);
+  pointer-events: none;
+  z-index: 10;
 }
 
 .horizontal-sticky-inner {
@@ -874,6 +893,8 @@ body {
   height: 200px;
   overflow: hidden;
   position: relative;
+  /* Top accent border for visual contrast, especially for dark screenshots */
+  border-top: 2px solid rgba(168, 85, 247, 0.45);
 }
 
 .project-horizontal-image {

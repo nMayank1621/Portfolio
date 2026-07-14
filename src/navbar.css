@@ -354,3 +354,34 @@
     opacity: 0;
   }
 }
+
+/* ── Responsive / Zoom-safe scaling ── */
+@media (max-width: 1300px) {
+  .gooey-nav-container nav ul {
+    gap: 20px;
+  }
+  .gooey-nav-container nav ul li {
+    font-size: 15px;
+  }
+  .gooey-nav-container nav ul li a {
+    padding: 10px 16px;
+  }
+  .gooey-nav-container {
+    padding: 10px 18px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .gooey-nav-container nav ul {
+    gap: 10px;
+  }
+  .gooey-nav-container nav ul li {
+    font-size: 13px;
+  }
+  .gooey-nav-container nav ul li a {
+    padding: 8px 10px;
+  }
+  .gooey-nav-container {
+    padding: 8px 14px;
+  }
+}

@@ -11,6 +11,7 @@ import heroImage from "./assets/user_profile.jpg";
 import hrDashboard from "./assets/board-1.png";
 import escortsKubota from "./assets/board-2.png";
 import touristaTravels from "./assets/Tourista.png";
+import universalRemote from "./assets/universal-remote.png";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -73,7 +74,8 @@ const projects = [
     title: "Universal Remote Dashboard",
     tech: "Python · Home Assistant",
     description: "Custom Home Assistant integration supporting TV, AVR, source switching, navigation controls, and live device status.",
-    image: "https://picsum.photos/seed/remote3/800/500",
+    image: universalRemote,
+    imagePosition: "right center",
     link: "#",
   },
   {
@@ -663,7 +665,12 @@ export default function App() {
             {projects.map((project, idx) => (
               <TiltCard key={idx} className="project-horizontal-card" maxTilt={7}>
                 <div className="project-image-wrapper">
-                  <img src={project.image} alt={project.title} className="project-horizontal-image" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-horizontal-image"
+                    style={project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
+                  />
                   <div className="project-image-overlay" />
                 </div>
                 <div className="project-horizontal-content">
