@@ -7,7 +7,7 @@ import SpotlightCard from "./SpotlightCard";
 import TiltCard from "./TiltCard";
 import LineSidebar from "./LineSidebar";
 import RotatingText from "./RotatingText";
-import heroImage from "./assets/user_profile.jpg";
+import heroImage from "./assets/user_profile.jpeg";
 import hrDashboard from "./assets/board-1.png";
 import escortsKubota from "./assets/board-2.png";
 import touristaTravels from "./assets/Tourista.png";
